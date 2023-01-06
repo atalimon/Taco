@@ -1,0 +1,213 @@
+:root {
+    --yellow: #ffc600;
+    --black: #272722;
+}
+html {
+    box-sizing: border-box;
+    font-weight: 900;
+    font-size: 10px;
+    color: var(--black);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0,0.7);
+}
+
+
+body {
+    font-size: 20px;
+    background-image: linear-gradient(110deg, #f93d66,#6d47d9 );    
+    min-height: calc(100vh - 100px);
+    margin: 50px;
+    background-attachment: fixed;
+    letter-spacing: -1px;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 5px 0;
+}
+.item {
+    display: grid;
+    justify-content: center;
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    font-size: 35px;
+    background-color: var(--yellow);
+}
+.item p {
+    margin: 0 0 5px 0;
+}
+
+.topnav {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    text-align: center;
+    margin: 1%;
+    gap: 10px;
+
+}
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2vw;
+    box-sizing: border-box;
+    background-color: #ffc600; 
+    width: 16.6%;
+    height: 80%;
+
+}
+.topnav .icon {
+    display: none;
+}
+.topnav a:hover {
+    background-color: #ffc600;
+    color: rgb(155, 32, 32);
+}
+.topnav a.active {
+    background-color: #ffc600;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+}
+.container-box {
+    display: grid;
+    grid-gap: 25px;
+}
+
+.top {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-areas:
+        "hero hero box1"
+        "hero hero box2";
+}
+.hero{
+    background-image: url("C:\Users\ASUS ROG GL752VW\Desktop\Restoraunt\style\taco.jpeg");
+    grid-area: hero;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 50px;
+    background-position: right;
+    background-size: cover;
+    background: white url(images/taco.jpg);
+}
+.hero > * {
+    background:var(--yellow);
+    padding: 5px;
+}
+.box {
+    background: var(--yellow);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.box p {
+    margin: 0;
+}
+.box1 {
+    grid-area: box1;
+}
+.box2 {
+    grid-area: box2;
+}
+.price {
+    font-size: 60px;
+    font-weight: 300;
+}
+
+.features {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.feature .icon {
+    font-size: 50px;
+}
+.feature {
+    background-color: aliceblue;
+    align-items: center;
+    text-align: center;
+}
+.feature p {
+    color: rgba(0,0,0,0.5);
+
+}
+.info {
+    background: white;
+    padding: 50px;
+    display:grid;
+    grid-template-columns: 400px 1fr;
+    align-items: center;
+}
+.gallery {
+    display: grid;
+    grid-gap:20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.galler img{
+    width: 100%;
+}
+.gallery h2 {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-gap: 20px;
+    align-items: center;
+}
+.gallery h2:before, .gallery h2:after {
+    display:block;
+    content: '';
+    height: 10px;
+    background: linear-gradient(to var(--direction, left), var(--yellow), transparent);
+}
+.gallery h2:after {
+    --direction: right;
+}
+@media (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: none;
+    }
+
+.topnav.responsive {position: relative;}
+.topnav.responsive .icon {
+  position: absolute;
+  right: 0;
+  top: 0; }
+}
+
+@media (max-width: 660px) {
+    .top{
+        grid-template-areas: 
+        "hero hero"
+        "box1 box2";
+    }
+    .info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .top {
+        grid-template-areas: 
+        "hero"
+        "box1"
+        "box2";
+
+    }
+    .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
